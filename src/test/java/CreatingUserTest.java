@@ -1,4 +1,5 @@
-import AllureStepsAPI.UserSteps;
+import allure_steps_api.UserSteps;
+import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
@@ -9,17 +10,24 @@ import org.junit.Test;
 public class CreatingUserTest {
     private UserSteps userSteps;
     private String accessToken;
+    private String email;
+    private String password;
+    private String name;
 
     @Before
     public void setUp() {
+        Faker faker = new Faker();
         userSteps = new UserSteps();
+        email = faker.internet().emailAddress();
+        password = faker.internet().password();
+        name = faker.name().firstName();
     }
 
     @Test
     @DisplayName("Positive check create user")
     @Description("Positive test create user")
     public void createUserTest() {
-        ValidatableResponse responseCreateUser = userSteps.createUser("hehe2024@gmail.com", "123456", "Gosling");
+        ValidatableResponse responseCreateUser = userSteps.createUser(email, password, name);
         userSteps.checkPositiveResponse(responseCreateUser);
         accessToken = userSteps.getAuthToken(responseCreateUser);
     }

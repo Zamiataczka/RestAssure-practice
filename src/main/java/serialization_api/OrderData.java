@@ -1,0 +1,14 @@
+package serialization_api;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class OrderData {
+    private List<String> ingredients;
+}

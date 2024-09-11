@@ -1,11 +1,12 @@
-package AllureStepsAPI;
+package allure_steps_api;
 
-import SerializationAPI.OrderData;
+import serialization_api.OrderData;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Assert;
 
-import static ConstantsAPI.EndPointsURL.ORDERS_URL;
+import static constants_api.EndPointsURL.INGREDIENTS_URL;
+import static constants_api.EndPointsURL.ORDERS_URL;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
@@ -75,4 +76,14 @@ public class OrderSteps extends SpecificationSetUp {
         validatableResponse
                 .statusCode(500);
     }
+
+    @Step("Get ingredients from stash")
+    public ValidatableResponse getIngredients() {
+        return given()
+                .spec(getSpec())
+                .when()
+                .get(INGREDIENTS_URL)
+                .then();
+    }
+
 }
