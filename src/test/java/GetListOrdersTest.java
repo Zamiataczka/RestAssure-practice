@@ -15,6 +15,9 @@ public class GetListOrdersTest {
     private OrderData orderData;
     private OrderSteps orderSteps;
     private String accessToken;
+    private String bun;
+    private String filling;
+    private String sauce;
 
     @Before
     public void setUp() {
@@ -23,7 +26,12 @@ public class GetListOrdersTest {
         userSteps.createUser("hehe2024@gmail.com", "123456", "Gosling");
         ValidatableResponse responseLogin = userSteps.userLogin("hehe2024@gmail.com", "123456");
         accessToken = userSteps.getAuthToken(responseLogin);
-        orderData = new OrderData(List.of("61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f", "61c0c5a71d1f82001bdaaa72"));
+        ValidatableResponse response = orderSteps.getIngredients();
+        List<String> ingredients = response.extract().path("data._id");
+        bun = ingredients.get(0);
+        filling = ingredients.get(1);
+        sauce = ingredients.get(4);
+        orderData = new OrderData(List.of(bun, filling, sauce));
         orderSteps.createOrderWithAuthToken(accessToken, orderData);
     }
 
