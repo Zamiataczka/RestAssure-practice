@@ -1,12 +1,12 @@
-package allure_steps_api;
+package allurestepsapi;
 
-import serialization_api.AccountData;
-import serialization_api.UserData;
+import serializationapi.AccountData;
+import serializationapi.UserData;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Assert;
 
-import static constants_api.EndPointsURL.*;
+import static constantsapi.EndPointsURL.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 

@@ -1,4 +1,4 @@
-package serialization_api;
+package serializationapi;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-import allure_steps_api.OrderSteps;
-import allure_steps_api.UserSteps;
-import serialization_api.OrderData;
+import allurestepsapi.OrderSteps;
+import allurestepsapi.UserSteps;
+import serializationapi.OrderData;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;

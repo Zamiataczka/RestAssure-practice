@@ -1,4 +1,4 @@
-import allure_steps_api.UserSteps;
+import allurestepsapi.UserSteps;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;

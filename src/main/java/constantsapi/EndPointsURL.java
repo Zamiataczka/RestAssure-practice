@@ -1,4 +1,4 @@
-package constants_api;
+package constantsapi;
 
 public class EndPointsURL {
     public static final String MAIN_URL = "https://stellarburgers.nomoreparties.site/";

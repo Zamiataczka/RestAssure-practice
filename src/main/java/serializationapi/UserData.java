@@ -1,4 +1,4 @@
-package serialization_api;
+package serializationapi;
 
 public class UserData {
     private String email;
